@@ -1,0 +1,8 @@
+# Development and test dependencies.
+# Not installed on Streamlit Community Cloud -- keep the deployed environment
+# to what the app actually imports.
+-r requirements.txt
+
+pytest==9.1.1
+pypdf==6.19.0     # only used to assert on the generated PDF report
+pyflakes==3.4.1   # lint

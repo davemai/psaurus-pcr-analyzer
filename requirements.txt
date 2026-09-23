@@ -1,0 +1,23 @@
+# Runtime dependencies for the Streamlit app (streamlit_app.py) and the CLI.
+#
+# Streamlit Community Cloud builds a fresh environment from this file, so it
+# must be complete and self-contained: anything only present on a developer's
+# machine will break the deployed build. Test-only packages live in
+# requirements-dev.txt so they are not installed on the server.
+#
+# Versions are pinned exactly to the set this project is tested against.
+#
+# PYTHON VERSION: 3.11, 3.12 or 3.13 (set it in Community Cloud's
+# "Advanced settings" when you deploy).
+#   * pandas 3.x and numpy 2.4 require >= 3.11
+#   * edlib publishes Linux wheels only up to cp313 -- on 3.14+ pip falls back
+#     to building it from source, which is slow and may fail on the builder.
+# All pinned packages below ship manylinux wheels for 3.11-3.13, so no
+# compiler and no packages.txt are needed.
+
+streamlit==1.64.0
+biopython==1.88        # FASTQ parsing and Phred decoding
+edlib==1.3.9.post1     # fast Levenshtein alignment for fuzzy flank matching
+pandas==3.0.6          # tabular outputs
+numpy==2.4.6           # histogram binning in psaurus_pcr.plots
+matplotlib==3.10.9     # QC plots and the PDF report

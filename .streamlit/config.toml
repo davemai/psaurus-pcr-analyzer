@@ -1,0 +1,23 @@
+# Streamlit configuration committed with the app.
+#
+# Community Cloud reads this file, so it keeps local runs and the deployed app
+# behaving the same. Secrets do NOT go here -- use .streamlit/secrets.toml
+# locally (git-ignored) and the "Secrets" box in Community Cloud's app settings.
+
+[server]
+# Uploads are held in memory and analysed there, and the whole batch result is
+# cached in memory afterwards, so this ceiling is really a memory ceiling.
+# Community Cloud gives an app a modest, shared memory budget; 200 MB of FASTQ
+# is comfortable, well beyond that the app is likely to be killed mid-run.
+# Raise it only on a host you control (and see the README's deployment notes).
+maxUploadSize = 200
+enableXsrfProtection = true
+enableCORS = true
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+# Rerun the script cleanly on every widget interaction; the heavy work is
+# behind st.cache_data so this stays cheap.
+fastReruns = true
