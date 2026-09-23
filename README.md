@@ -1,5 +1,7 @@
 # psaurus-pcr-analyzer
 
+Access the tool here: https://psaurus-pcr-analyzer.streamlit.app/
+
 Analysis pipeline for **Plasmidsaurus long-read (Oxford Nanopore) PCR amplicon
 data**: quality-filter the reads, pull out the insert sitting between two
 user-supplied flanking sequences, collapse and count the unique inserts, and
